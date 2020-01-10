@@ -528,6 +528,17 @@ config UID_SYS_STATS_DEBUG
 	help
 	  Per TASK based io statistics exported to /proc/uid_io
 
+config TIEQEP
+	tristate "EQEP Hardware quadrature encoder controller"
+	depends on SOC_AM33XX
+	select PWM_TIPWMSS
+	help
+	  Driver support for the EQEP quadrature encoder controller AM33XX
+	  TI SOC
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called tieqep.
+
 source "drivers/misc/c2port/Kconfig"
 source "drivers/misc/eeprom/Kconfig"
 source "drivers/misc/cb710/Kconfig"
@@ -538,6 +549,7 @@ source "drivers/misc/mei/Kconfig"
 source "drivers/misc/vmw_vmci/Kconfig"
 source "drivers/misc/mic/Kconfig"
 source "drivers/misc/genwqe/Kconfig"
+source "drivers/misc/cape/Kconfig"
 source "drivers/misc/echo/Kconfig"
 source "drivers/misc/cxl/Kconfig"
 source "drivers/misc/ocxl/Kconfig"

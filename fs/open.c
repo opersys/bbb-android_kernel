@@ -69,6 +69,7 @@ int do_truncate(struct dentry *dentry, loff_t length, unsigned int time_attrs,
 {
 	return do_truncate2(NULL, dentry, length, time_attrs, filp);
 }
+EXPORT_SYMBOL_GPL(do_truncate);
 
 long vfs_truncate(const struct path *path, loff_t length)
 {
